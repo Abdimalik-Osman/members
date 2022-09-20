@@ -1,0 +1,22 @@
+<h1 class="text-center"> {{title}}</h1>
+
+<form action="/api/members" method="post" class="mb-5 p-3 shadow">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name"  class="form-control" id="name" placeholder="Member Name.">
+    </div>
+    <div class="form-group my-3">
+        <label for="status">Status</label>
+        <input type="text" name="status" class="form-control" id="status" placeholder="Member status.">
+    </div>
+    <input type="submit" value="Add Member" class="btn btn-primary w-100">
+</form>
+<h4>Members..</h4>
+
+<ul class="list-group">
+    {{#each members}}
+        <li class="list-group-item">{{this.name}}: {{this.status}}</li>
+    {{/each}}
+</ul>
+
+<a href="/api/members" class="btn btn-light my-3">Visit API</a>
